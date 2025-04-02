@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, Monitor, Brain, LineChart, Building2, CreditCard } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const stats = [
@@ -9,11 +9,11 @@ const AboutSection: React.FC = () => {
   ];
 
   const valuePropositions = [
-    'Digital B2B Software Sales Engine',
-    'AI-Augmentation Operational Playbook',
-    'Revenue Synergies',
-    'Centralized Operations',
-    'Growth Capital'
+    { text: 'Digital B2B Software Sales Engine', icon: <Monitor className="h-5 w-5 text-white" /> },
+    { text: 'AI-Augmentation Operational Playbook', icon: <Brain className="h-5 w-5 text-white" /> },
+    { text: 'Revenue Synergies', icon: <LineChart className="h-5 w-5 text-white" /> },
+    { text: 'Centralized Operations', icon: <Building2 className="h-5 w-5 text-white" /> },
+    { text: 'Growth Capital', icon: <CreditCard className="h-5 w-5 text-white" /> }
   ];
 
   return (
@@ -40,9 +40,9 @@ const AboutSection: React.FC = () => {
               {valuePropositions.map((item, index) => (
                 <div key={index} className="flex items-start bg-gradient-to-br from-[#FF5000]/10 to-[#FF7A38]/10 p-4 rounded-lg">
                   <div className="mt-1 mr-3 h-8 w-8 rounded-full bg-gradient-to-r from-[#FF5000] to-[#FF7A38] flex items-center justify-center flex-shrink-0">
-                    <Check className="h-5 w-5 text-white" />
+                    {item.icon}
                   </div>
-                  <p className="text-aries-light font-medium text-lg">{item}</p>
+                  <p className="text-aries-light font-medium text-xl">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -63,9 +63,9 @@ const AboutSection: React.FC = () => {
             
             <div className="relative mx-auto w-full max-w-md aspect-square rounded-full bg-gradient-to-br from-[#FF5000]/20 to-[#FF7A38]/20 p-1 glass">
               <div className="h-full w-full rounded-full bg-card-gradient glass flex items-center justify-center overflow-hidden">
-                <div className="text-center p-10">
-                  <h3 className="text-2xl font-bold mb-4">Our Goal</h3>
-                  <p className="text-aries-light/90">To become the premier permanent home for software businesses who want to preserve their culture, safeguard their identity, and continue building their legacy.</p>
+                <div className="text-center p-8">
+                  <h3 className="text-3xl font-bold mb-5">Our Goal</h3>
+                  <p className="text-aries-light/90 text-xl">To become the premier permanent home for software businesses who want to preserve their culture, safeguard their identity, and continue building their legacy.</p>
                 </div>
               </div>
             </div>

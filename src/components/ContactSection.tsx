@@ -77,7 +77,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-aries-gray mb-1">Location</p>
-                    <p className="text-aries-light">Federation Headquarters, EMEA</p>
+                    <p className="text-aries-light">London, United Kingdom</p>
                   </div>
                 </div>
               </div>
