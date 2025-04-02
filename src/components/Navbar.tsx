@@ -37,9 +37,12 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-aries-purple to-aries-pink"></div>
-          <span className="text-xl font-bold text-white">Aries</span>
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/9ac1bd6d-ad0f-4105-986c-c713bf37be9a.png" 
+            alt="Federation Logo" 
+            className="h-10 w-auto"
+          />
         </div>
         
         {/* Desktop menu */}
@@ -55,7 +58,7 @@ const Navbar = () => {
           ))}
         </div>
         
-        <Button className="hidden md:flex bg-gradient-to-r from-aries-purple to-aries-pink hover:opacity-90 transition-opacity">
+        <Button className="hidden md:flex bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity">
           Get Started
         </Button>
 
@@ -80,7 +83,7 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="bg-gradient-to-r from-aries-purple to-aries-pink hover:opacity-90 transition-opacity w-full">
+          <Button className="bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity w-full">
             Get Started
           </Button>
         </div>
