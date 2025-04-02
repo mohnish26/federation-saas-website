@@ -11,18 +11,17 @@ interface ProcessStepProps {
 
 const ProcessStep: React.FC<ProcessStepProps> = ({ icon, title, description, step }) => {
   return (
-    <div className="relative flex flex-col items-center">
-      <div className="absolute top-0 left-1/2 h-full w-1 bg-gradient-to-b from-[#FF5000] to-[#FF7A38] -translate-x-1/2 z-0"></div>
-      <div className="relative z-10 h-16 w-16 rounded-full bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center mb-4">
+    <div className="relative flex flex-col items-center bg-gradient-to-br from-[#FF5000]/20 to-[#FF7A38]/20 rounded-xl p-8 shadow-lg border border-[#FF5000]/30 backdrop-blur-sm">
+      <div className="absolute -top-5 left-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center text-white font-bold">
+        {step}
+      </div>
+      <div className="h-16 w-16 rounded-full bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center mb-6 mt-2">
         <div className="h-14 w-14 rounded-full bg-aries-dark flex items-center justify-center">
           {icon}
         </div>
       </div>
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FF5000] text-white h-8 w-8 rounded-full flex items-center justify-center font-bold">
-        {step}
-      </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-aries-light/70 text-center max-w-xs">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-center">{title}</h3>
+      <p className="text-aries-light/80 text-center">{description}</p>
     </div>
   );
 };
@@ -69,7 +68,7 @@ const TeamSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
           {steps.map((step, index) => (
             <ProcessStep
               key={index}

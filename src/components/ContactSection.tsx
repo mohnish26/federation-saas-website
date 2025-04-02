@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, Mail, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -59,37 +59,6 @@ const ContactSection: React.FC = () => {
           
           <div className="space-y-8 animate-slide-in-right">
             <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold mb-6">Why Partner With Us</h3>
-              <div className="space-y-6">
-                <p className="text-aries-light/80 leading-relaxed">
-                  We provide partner companies with world-class expertise and proven best practices from leading B2B software organizations:
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-[#FF5000] mr-3"></div>
-                    <span className="text-aries-light/80">Digital B2B Software Sales Engine</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-[#FF5000] mr-3"></div>
-                    <span className="text-aries-light/80">AI-Augmentation Operational Playbook</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-[#FF5000] mr-3"></div>
-                    <span className="text-aries-light/80">Revenue Synergies</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-[#FF5000] mr-3"></div>
-                    <span className="text-aries-light/80">Centralized Operations</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-[#FF5000] mr-3"></div>
-                    <span className="text-aries-light/80">Growth Capital</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="glass rounded-2xl p-8">
               <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -98,7 +67,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-aries-gray mb-1">Email</p>
-                    <p className="text-aries-light">contact@federation.com</p>
+                    <p className="text-aries-light">contact@federationsaas.com</p>
                   </div>
                 </div>
                 
