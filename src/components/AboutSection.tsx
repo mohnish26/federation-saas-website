@@ -38,8 +38,8 @@ const AboutSection: React.FC = () => {
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold mb-4">What We Offer</h3>
               {valuePropositions.map((item, index) => (
-                <div key={index} className="flex items-start bg-gradient-to-br from-[#FF5000]/10 to-[#FF7A38]/10 p-4 rounded-lg">
-                  <div className="mt-1 mr-3 h-8 w-8 rounded-full bg-gradient-to-r from-[#FF5000] to-[#FF7A38] flex items-center justify-center flex-shrink-0">
+                <div key={index} className="flex items-center bg-gradient-to-br from-[#FF5000]/10 to-[#FF7A38]/10 p-4 rounded-lg">
+                  <div className="mr-3 h-8 w-8 rounded-full bg-gradient-to-r from-[#FF5000] to-[#FF7A38] flex items-center justify-center flex-shrink-0">
                     {item.icon}
                   </div>
                   <p className="text-aries-light font-medium text-xl">{item.text}</p>
