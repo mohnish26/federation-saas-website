@@ -12,7 +12,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 const Index: React.FC = () => {
   useEffect(() => {
     // Update the document title
-    document.title = 'Federation | Next Generation Cosmic Enterprise';
+    document.title = 'Federation SaaS | Buy, Build and Scale Software Companies';
   }, []);
 
   return (

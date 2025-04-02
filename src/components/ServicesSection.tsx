@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Rocket, Globe, Shield, Cpu, Zap, Database } from 'lucide-react';
+import { Building, Globe, Shield, BarChart4, TrendingUp, Euro } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
@@ -15,7 +15,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, del
       className="glass rounded-2xl p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg animate-fade-in-up" 
       style={{ animationDelay: `${delay}s` }}
     >
-      <div className="h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-aries-purple to-aries-pink flex items-center justify-center">
+      <div className="h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center">
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
@@ -27,51 +27,51 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, del
 const ServicesSection: React.FC = () => {
   const services = [
     {
-      title: "Space Exploration",
-      description: "Pioneering missions that expand our cosmic knowledge and push the boundaries of human reach in the universe.",
-      icon: <Rocket className="h-6 w-6 text-white" />,
-    },
-    {
-      title: "Interplanetary Communication",
-      description: "Building networks that connect distant worlds, enabling seamless data transfer across the vastness of space.",
+      title: "EMEA Focused",
+      description: "We partner with software companies based in Europe, Middle East, and Africa.",
       icon: <Globe className="h-6 w-6 text-white" />,
     },
     {
-      title: "Cosmic Security",
-      description: "Protecting celestial assets with advanced defense systems designed for the unique challenges of space.",
+      title: "Founder-Owned",
+      description: "We work with founder-owned or privately held software businesses looking for their next chapter.",
+      icon: <Building className="h-6 w-6 text-white" />,
+    },
+    {
+      title: "Mission-Critical Solutions",
+      description: "We focus on vertical or horizontal mission-critical software solutions with loyal customers.",
       icon: <Shield className="h-6 w-6 text-white" />,
     },
     {
-      title: "Quantum Computing",
-      description: "Harnessing the power of quantum mechanics to solve complex problems beyond classical computing capabilities.",
-      icon: <Cpu className="h-6 w-6 text-white" />,
+      title: "Revenue Scale",
+      description: "Companies with revenue between €1M and €20M that are ready to scale to the next level.",
+      icon: <BarChart4 className="h-6 w-6 text-white" />,
     },
     {
-      title: "Energy Systems",
-      description: "Developing sustainable energy solutions that power spacecraft, stations, and colonies throughout the galaxy.",
-      icon: <Zap className="h-6 w-6 text-white" />,
+      title: "Growth Potential",
+      description: "Businesses with stable or growing revenue and high gross margins.",
+      icon: <TrendingUp className="h-6 w-6 text-white" />,
     },
     {
-      title: "Data Analytics",
-      description: "Processing vast amounts of cosmic data to unlock insights and drive innovation in space technology.",
-      icon: <Database className="h-6 w-6 text-white" />,
+      title: "Profitable Operations",
+      description: "Operations with an EBITDA between €500K and €5M demonstrating business viability.",
+      icon: <Euro className="h-6 w-6 text-white" />,
     },
   ];
 
   return (
     <section id="services" className="py-20 md:py-32 bg-aries-dark relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-aries-blue to-transparent opacity-50"></div>
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-aries-purple/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-aries-pink/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 right-0 w-72 h-72 bg-[#FF5000]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-[#FF7A38]/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-16 text-center">
-          <p className="text-aries-purple mb-3">OUR SERVICES</p>
+          <p className="text-[#FF5000] mb-3">BUSINESSES WE LOVE</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Cosmic <span className="gradient-text">Solutions</span>
+            Our Ideal <span className="text-[#FF5000]">Partners</span>
           </h2>
           <p className="text-aries-light/70 max-w-2xl mx-auto text-lg">
-            Cutting-edge services designed to advance humanity's reach among the stars.
+            We focus on partnering with exceptional SMBs that align with our vision of delivering mission-critical software solutions.
           </p>
         </div>
 

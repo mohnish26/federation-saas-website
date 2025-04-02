@@ -1,93 +1,82 @@
 
 import React from 'react';
-import { Linkedin, Github, Twitter } from 'lucide-react';
+import { PhoneCall, FileText, ClipboardCheck, Banknote } from 'lucide-react';
 
-interface TeamMemberProps {
-  name: string;
-  role: string;
-  imageUrl: string;
-  delay: number;
+interface ProcessStepProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  step: number;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageUrl, delay }) => {
+const ProcessStep: React.FC<ProcessStepProps> = ({ icon, title, description, step }) => {
   return (
-    <div 
-      className="glass rounded-2xl p-6 text-center transition-all duration-300 hover:translate-y-[-5px] group animate-fade-in-up"
-      style={{ animationDelay: `${delay}s` }}
-    >
-      <div className="relative mb-6 mx-auto w-40 h-40 rounded-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-aries-purple/40 to-aries-pink/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <img 
-          src={imageUrl} 
-          alt={name}
-          className="w-full h-full object-cover" 
-        />
+    <div className="relative flex flex-col items-center">
+      <div className="absolute top-0 left-1/2 h-full w-1 bg-gradient-to-b from-[#FF5000] to-[#FF7A38] -translate-x-1/2 z-0"></div>
+      <div className="relative z-10 h-16 w-16 rounded-full bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center mb-4">
+        <div className="h-14 w-14 rounded-full bg-aries-dark flex items-center justify-center">
+          {icon}
+        </div>
       </div>
-      <h3 className="text-xl font-semibold">{name}</h3>
-      <p className="text-aries-gray mb-4">{role}</p>
-      <div className="flex justify-center space-x-4">
-        <a href="#" className="text-aries-light/60 hover:text-aries-purple transition-colors">
-          <Linkedin className="h-5 w-5" />
-        </a>
-        <a href="#" className="text-aries-light/60 hover:text-aries-purple transition-colors">
-          <Github className="h-5 w-5" />
-        </a>
-        <a href="#" className="text-aries-light/60 hover:text-aries-purple transition-colors">
-          <Twitter className="h-5 w-5" />
-        </a>
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FF5000] text-white h-8 w-8 rounded-full flex items-center justify-center font-bold">
+        {step}
       </div>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-aries-light/70 text-center max-w-xs">{description}</p>
     </div>
   );
 };
 
 const TeamSection: React.FC = () => {
-  const teamMembers = [
+  const steps = [
     {
-      name: "Alex Stern",
-      role: "Founder & CEO",
-      imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+      icon: <PhoneCall className="h-7 w-7 text-[#FF7A38]" />,
+      title: "Introductory Call",
+      description: "We discuss your company's potential, avenues for growth, and how we could support you.",
     },
     {
-      name: "Sophia Chen",
-      role: "Chief Technology Officer",
-      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      icon: <FileText className="h-7 w-7 text-[#FF7A38]" />,
+      title: "Indication of Interest",
+      description: "With limited data, we provide an initial valuation range and walk you through the envisioned deal structure.",
     },
     {
-      name: "Marcus Johnson",
-      role: "Head of Innovation",
-      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      icon: <ClipboardCheck className="h-7 w-7 text-[#FF7A38]" />,
+      title: "Binding Offer",
+      description: "After due diligence (commercial, financial, legal, and technical), we provide our final binding offer.",
     },
     {
-      name: "Elise Wong",
-      role: "Director of Operations",
-      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      icon: <Banknote className="h-7 w-7 text-[#FF7A38]" />,
+      title: "Transaction Closing",
+      description: "Once the transaction is finalized and documents are signed, you can expect funds in your bank account the next day.",
     },
   ];
 
   return (
-    <section id="team" className="py-20 md:py-32 bg-space-gradient relative overflow-hidden">
-      <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-aries-purple/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-aries-pink/10 rounded-full blur-3xl"></div>
+    <section id="team" className="py-20 md:py-32 bg-aries-blue relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-aries-dark to-transparent opacity-50"></div>
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-aries-dark to-transparent opacity-50"></div>
+      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#FF5000]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-[#FF7A38]/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-16 text-center">
-          <p className="text-aries-purple mb-3">OUR TEAM</p>
+          <p className="text-[#FF5000] mb-3">ACQUISITION PROCESS</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Meet Our <span className="gradient-text">Cosmic Crew</span>
+            Swift and <span className="text-[#FF5000]">Friendly</span>
           </h2>
           <p className="text-aries-light/70 max-w-2xl mx-auto text-lg">
-            Brilliant minds working together to push the boundaries of space technology.
+            Our acquisition process is transparent and efficient, typically completed within a few weeks.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <TeamMember
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mt-20">
+          {steps.map((step, index) => (
+            <ProcessStep
               key={index}
-              name={member.name}
-              role={member.role}
-              imageUrl={member.imageUrl}
-              delay={0.1 * index}
+              icon={step.icon}
+              title={step.title}
+              description={step.description}
+              step={index + 1}
             />
           ))}
         </div>

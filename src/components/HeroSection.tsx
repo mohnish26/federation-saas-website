@@ -13,37 +13,22 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="flex flex-col items-center text-center space-y-8 md:space-y-12">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold max-w-4xl leading-tight animate-fade-in-up">
-            The Next Generation
-            <span className="gradient-text block">Cosmic Enterprise</span>
+            We Buy, Build and Scale
+            <span className="text-[#FF5000] block">Wonderful Software Companies</span>
           </h1>
           
           <p className="text-lg md:text-xl text-aries-light/80 max-w-2xl animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            Pioneering innovation across the galaxies, delivering cutting-edge solutions for the modern universe.
+            Transforming software businesses into market leaders while creating long-term value for all stakeholders.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Button className="bg-gradient-to-r from-aries-purple to-aries-pink hover:opacity-90 transition-opacity text-lg px-8 py-6">
-              Explore Our Universe
+            <Button className="bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity text-lg px-8 py-6">
+              Partner With Us
             </Button>
             <Button variant="outline" className="group border-aries-light/30 hover:border-aries-light/60 text-lg px-8 py-6">
               Learn More
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
-          </div>
-        </div>
-        
-        <div className="mt-20 md:mt-32 flex justify-center">
-          <div className="relative animate-float">
-            <div className="absolute -top-16 -left-16 w-32 h-32 bg-aries-purple/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-aries-pink/20 rounded-full blur-3xl"></div>
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-aries-blue to-aries-dark p-1">
-              <div className="w-full h-full rounded-full bg-card-gradient glass flex items-center justify-center">
-                <div className="w-2/3 h-2/3 opacity-80">
-                  {/* Add an SVG or image here */}
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-aries-purple/30 to-aries-pink/30 animate-pulse-slow"></div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
