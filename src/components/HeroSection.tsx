@@ -4,6 +4,10 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const HeroSection: React.FC = () => {
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section 
       id="hero" 
@@ -22,10 +26,17 @@ const HeroSection: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Button className="bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity text-lg px-8 py-6">
+            <Button 
+              className="bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity text-lg px-8 py-6"
+              onClick={scrollToContact}
+            >
               Partner With Us
             </Button>
-            <Button variant="outline" className="group border-aries-light/30 hover:border-aries-light/60 text-lg px-8 py-6">
+            <Button 
+              variant="outline" 
+              className="group border-aries-light/30 hover:border-aries-light/60 text-lg px-8 py-6"
+              onClick={scrollToContact}
+            >
               Learn More
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>

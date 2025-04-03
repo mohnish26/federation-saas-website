@@ -29,6 +29,10 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <nav 
       className={cn(
@@ -58,7 +62,10 @@ const Navbar = () => {
           ))}
         </div>
         
-        <Button className="hidden md:flex bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity">
+        <Button 
+          className="hidden md:flex bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity"
+          onClick={scrollToContact}
+        >
           Get Started
         </Button>
 
@@ -83,7 +90,13 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity w-full">
+          <Button 
+            className="bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity w-full"
+            onClick={() => {
+              scrollToContact();
+              setMobileMenuOpen(false);
+            }}
+          >
             Get Started
           </Button>
         </div>

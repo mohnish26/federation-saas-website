@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, Twitter, Linkedin, Github } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -19,17 +19,13 @@ const Footer: React.FC = () => {
               We buy, build, and scale software companies, transforming them into market leaders while creating long-term value for all stakeholders.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Instagram className="h-5 w-5 text-aries-light" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Twitter className="h-5 w-5 text-aries-light" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/federation-saas" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
                 <Linkedin className="h-5 w-5 text-aries-light" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Github className="h-5 w-5 text-aries-light" />
               </a>
             </div>
           </div>
