@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         'fixed w-full z-50 transition-all duration-300 ease-in-out',
-        isScrolled ? 'bg-aries-dark/80 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'
+        isScrolled ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -55,7 +55,7 @@ const Navbar = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="text-aries-light/80 hover:text-white transition-colors"
+              className="text-gray-700 hover:text-[#FF5000] transition-colors"
             >
               {link.name}
             </a>
@@ -71,20 +71,20 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <div className="md:hidden">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-800">
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
       </div>
       
       {/* Mobile menu */}
-      <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} bg-aries-dark/95 backdrop-blur-md absolute w-full`}>
+      <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} bg-white/95 backdrop-blur-md absolute w-full shadow-md`}>
         <div className="container mx-auto py-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <a 
               key={link.name}
               href={link.href}
-              className="text-aries-light/80 hover:text-white transition-colors py-2"
+              className="text-gray-700 hover:text-[#FF5000] transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}

@@ -11,17 +11,15 @@ interface ProcessStepProps {
 
 const ProcessStep: React.FC<ProcessStepProps> = ({ icon, title, description, step }) => {
   return (
-    <div className="relative flex flex-col items-center bg-gradient-to-br from-[#FF5000]/20 to-[#FF7A38]/20 rounded-xl p-8 shadow-lg border border-[#FF5000]/30 backdrop-blur-sm">
+    <div className="relative flex flex-col items-center bg-white rounded-xl p-8 shadow-md border border-gray-100">
       <div className="absolute -top-5 left-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center text-white font-bold">
         {step}
       </div>
-      <div className="h-16 w-16 rounded-full bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center mb-6 mt-2">
-        <div className="h-14 w-14 rounded-full bg-aries-dark flex items-center justify-center">
-          {icon}
-        </div>
+      <div className="h-16 w-16 rounded-full bg-orange-50 flex items-center justify-center mb-6 mt-2">
+        {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-center">{title}</h3>
-      <p className="text-aries-light/80 text-center">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-center text-gray-900">{title}</h3>
+      <p className="text-gray-600 text-center">{description}</p>
     </div>
   );
 };
@@ -51,19 +49,14 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section id="team" className="py-20 md:py-32 bg-aries-blue relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-aries-dark to-transparent opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-aries-dark to-transparent opacity-50"></div>
-      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#FF5000]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-[#FF7A38]/10 rounded-full blur-3xl"></div>
-      
+    <section id="team" className="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-16 text-center">
           <p className="text-[#FF5000] mb-3">ACQUISITION PROCESS</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
             Swift and <span className="text-[#FF5000]">Friendly</span>
           </h2>
-          <p className="text-aries-light/70 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Our acquisition process is transparent and efficient, typically completed within a few weeks.
           </p>
         </div>

@@ -12,14 +12,14 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, delay }) => {
   return (
     <div 
-      className="glass rounded-2xl p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg animate-fade-in-up" 
+      className="bg-white rounded-2xl p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg animate-fade-in-up border border-gray-100 shadow-sm" 
       style={{ animationDelay: `${delay}s` }}
     >
       <div className="h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-[#FF5000] to-[#FF7A38] flex items-center justify-center">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-aries-light/70">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </div>
   );
 };
@@ -59,18 +59,14 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-aries-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-aries-blue to-transparent opacity-50"></div>
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-[#FF5000]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-[#FF7A38]/10 rounded-full blur-3xl"></div>
-      
+    <section id="services" className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-16 text-center">
           <p className="text-[#FF5000] mb-3">BUSINESSES WE LOVE</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
             Our Ideal <span className="text-[#FF5000]">Partners</span>
           </h2>
-          <p className="text-aries-light/70 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             We focus on partnering with exceptional SMBs that align with our vision of delivering mission-critical software solutions.
           </p>
         </div>
