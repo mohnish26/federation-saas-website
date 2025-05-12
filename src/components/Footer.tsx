@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -26,6 +26,12 @@ const Footer: React.FC = () => {
                 className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
               >
                 <Linkedin className="h-5 w-5 text-[#FF5000]" />
+              </a>
+              <a 
+                href="mailto:isaac@federationsaas.com" 
+                className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+              >
+                <Mail className="h-5 w-5 text-[#FF5000]" />
               </a>
             </div>
           </div>

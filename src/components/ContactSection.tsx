@@ -1,11 +1,68 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Send, Mail, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactSection: React.FC = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    website: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // This is a basic implementation to simulate form submission
+      // In a real implementation, you would use a backend API or service
+      console.log('Sending form data to isaac@federationsaas.com:', formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Message sent!",
+        description: "We've received your message and will get back to you soon.",
+      });
+      
+      // Clear form
+      setFormData({
+        name: '',
+        company: '',
+        website: '',
+        phone: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
@@ -22,31 +79,71 @@ const ContactSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 animate-slide-in-left">
             <h3 className="text-2xl font-semibold mb-6 text-gray-900">Send us a message</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <Input placeholder="Your Name" className="bg-gray-50 border-gray-200 h-12" />
+                  <Input 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name" 
+                    className="bg-gray-50 border-gray-200 h-12" 
+                  />
                 </div>
                 <div>
-                  <Input placeholder="Company Name" className="bg-gray-50 border-gray-200 h-12" />
+                  <Input 
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Company Name" 
+                    className="bg-gray-50 border-gray-200 h-12" 
+                  />
                 </div>
               </div>
               <div>
-                <Input placeholder="Company Website" className="bg-gray-50 border-gray-200 h-12" />
+                <Input 
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  placeholder="Company Website" 
+                  className="bg-gray-50 border-gray-200 h-12" 
+                />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <Input placeholder="Phone Number" className="bg-gray-50 border-gray-200 h-12" />
+                  <Input 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone Number" 
+                    className="bg-gray-50 border-gray-200 h-12" 
+                  />
                 </div>
                 <div>
-                  <Input placeholder="Email Address" className="bg-gray-50 border-gray-200 h-12" />
+                  <Input 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email Address" 
+                    className="bg-gray-50 border-gray-200 h-12" 
+                  />
                 </div>
               </div>
               <div>
-                <Textarea placeholder="Project Description" className="bg-gray-50 border-gray-200 min-h-[120px]" />
+                <Textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Project Description" 
+                  className="bg-gray-50 border-gray-200 min-h-[120px]" 
+                />
               </div>
-              <Button className="w-full bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity h-12">
-                Send Message
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#FF5000] to-[#FF7A38] hover:opacity-90 transition-opacity h-12"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
@@ -62,7 +159,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-500 mb-1">Email</p>
-                    <p className="text-gray-800">contact@federationsaas.com</p>
+                    <p className="text-gray-800">isaac@federationsaas.com</p>
                   </div>
                 </div>
                 
@@ -72,7 +169,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-500 mb-1">Location</p>
-                    <p className="text-gray-800">London, United Kingdom</p>
+                    <p className="text-gray-800">EMEA</p>
                   </div>
                 </div>
               </div>
